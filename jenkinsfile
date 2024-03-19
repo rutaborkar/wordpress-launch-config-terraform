@@ -1,3 +1,9 @@
+secrets = [
+    [path: 'kv-aws/'+params.SUBSCRIPTION+'/secrets/service-principal', engineVersion: 2, secretValues: [
+    [envVar: 'AWS_ACCESS_KEY_ID', vaultKey: 'ACCESS_KEY_ID'],
+    [envVar: 'AWS_SECRET_ACCESS_KEY', vaultKey: 'SECRET_ACCESS_KEY']]],
+]
+
 pipeline {
     agent any
     environment {
@@ -30,12 +36,6 @@ pipeline {
                 }
             }
         }
-        stage('Upload State to S3') {
-            steps {
-                script {
-                    sh 'aws s3 cp terraform.tfstate s3://your-bucket-name'
-                }
-            }
         }
     }
     post {
