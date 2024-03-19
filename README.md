@@ -1,10 +1,10 @@
 # wordpress-terraform
 
-Deploys a launch configuration , creating ami with existing ec2 instance and then updating 
+Deploys a launch configuration , creating ami with existing ec2 instance and then updating ALB launch configuration.
 
 ## Resources
 Provisions the following AWS resources
-1.AWS Account
+1. AWS Account
 
 ## Prerequisites
 * [terraform]
